@@ -9,9 +9,16 @@ public void setup()
 public void draw() 
 {   
   background(0);   
-  stroke(0,255,0);   
-  line(320,480,320,380);   
-  drawBranches(320, 380, 100, 3*Math.PI/2);  //will add later 
+  stroke(255);   
+  line(320,480,320,410);   
+  drawBranches(320, 410, 90, 3*Math.PI/2);  //will add later 
+  
+  //if(mousePressed == true){
+  //  int y1 = (int)(Math.random()*100)+400;
+  //  int y2 = y1-50;
+  //  line(320,y1,320,y2);   
+  //  drawBranches(320, y2, 85, 3*Math.PI/2);
+  //}
 } 
 public void drawBranches(int x,int y, double branchLength, double angle) 
 {   
@@ -21,7 +28,9 @@ public void drawBranches(int x,int y, double branchLength, double angle)
   int endY1 = (int)(branchLength*Math.sin(angle1) + y);
   int endX2 = (int)(branchLength*Math.cos(angle2) + x);
   int endY2 = (int)(branchLength*Math.sin(angle2) + y);
+  stroke((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)); 
   line(x,y,endX1,endY1);  
+  stroke((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)); 
   line(x,y,endX2,endY2);  
   branchLength *= fractionLength;
   if(branchLength > smallestBranch){
